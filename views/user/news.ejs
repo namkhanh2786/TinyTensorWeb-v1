@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTensor - News</title>
+    <%- include('../libraries/ui-libraries') %>
+    <link rel="stylesheet" href="../stylesheets/news.css">
+</head>
+<%- include('../templates/navbar', {urlPath: '/news'}) %>
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="page-name-body" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div id="blockage-page-name-body" class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                <div id="page-name-in-body" class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <span class="page-name">Latest News About Bootcamp</span>
+                </div>
+                <div id="blockage-page-name-body" class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+            </div>
+            <div id="filter-bar" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div id="filter-search" class="topics col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <form id="search-form" method="POST" action="/news">
+                        <input id="search-box" class="search__input col-12" name="queryText" type="text" placeholder="Search related news">
+                    </form>
+                </div>
+                <div id="filter-options" class="topics col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn btn-primary col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                        <a href="/news" id="option-All" class="option">ALL</a>
+                    </button>
+                    <button class="btn btn-success col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <a href="/news/News" id="option-News" class="option">NEWS</a>
+                    </button>
+                    <button class="btn btn-info col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <a href="/news/Events" id="option-Events" class="option">EVENTS</a>
+                    </button>
+                    <button class="btn btn-danger col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <a href="/news/Announcements" id="option-Announcements" class="option">ANNOUNCEMENTS</a>
+                    </button>
+                </div>
+            </div>
+            <div id="news-body" class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-5">
+                <div class="row news-row" id="news-container">
+                    <% if (news.length > 0) { %>
+                        <% news.forEach(newsData => { %>
+                            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                <div class="card news-item h-100">
+                                    <img src="<%= newsData.data.type === 'News' ? 'https://bccare.ca/wp-content/uploads/breakingnews.jpg' : newsData.data.type === 'Events' ? 'https://th.bing.com/th/id/OIP.qBAeUZhNXTjMnXic-d1zoAHaG2?w=800&h=740&rs=1&pid=ImgDetMain' : newsData.data.type === 'Announcements' ? 'https://th.bing.com/th/id/R.3ec29551ef6bb524a00cf8030d0a8c4a?rik=QC9XE13b8IhOzA&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fLcd%2fojE%2fLcdojE7oi.jpg&ehk=BZEzuH5IXM5iZ32G1JJUur9gZhcd%2f1FfRXjmRT1GPcg%3d&risl=&pid=ImgRaw&r=0' : '' %>" class="card-img-top thumbnail" alt="TinyTensor Thumbnail News">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title title"><%= newsData.data.title %></h5>
+                                        <p class="card-text type mb-2">
+                                            <% if (newsData.data.type === 'News') { %>
+                                                <span class="badge badge-success"><%- newsData.data.type %></span>
+                                            <% } else if (newsData.data.type === 'Events') { %>
+                                                <span class="badge badge-info"><%- newsData.data.type %></span>
+                                            <% } else if (newsData.data.type === 'Announcements') { %>
+                                                <span class="badge badge-danger"><%- newsData.data.type %></span>
+                                            <% } else { %>
+                                                <span class="badge badge-secondary"><%- newsData.data.type %></span>
+                                            <% } %>
+                                        </p>
+                                        <a href="/news/<%= newsData.id %>" class="btn btn-primary read-more-btn mt-auto">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <div class="col-12 news-null">
+                            <p class="news-null-message">There are no news for this topic.</p>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('../templates/footer') %>
+<script type="module" src="../javascripts/news.js"></script>
+</html>

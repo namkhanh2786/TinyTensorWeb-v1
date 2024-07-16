@@ -1,0 +1,145 @@
+#page-Introduction {
+    margin-top: 10pt;
+    font-family: 'Oswald';
+    font-weight: bolder;
+    font-size: 50pt;
+    text-align: center;
+    margin-bottom: 30pt;
+}
+
+.person__circle, .person__img {
+    max-width: 100%;
+    display: block;
+}
+
+.person {
+    position: relative;
+    max-width: 15rem;
+    margin-inline: auto;
+}
+
+.person__container {
+    aspect-ratio: 1 / 1.5;
+    display: grid;
+    align-items: end;
+    border-radius: 0 0 100vw 100vw;
+    overflow: hidden;
+    text-align: center;
+}
+
+.person__circle {
+    position: absolute;
+    inset: auto 0 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 70%;
+    margin-inline: auto;
+}
+
+.person__img {
+    position: relative;
+    z-index: 2;
+    transform: scale(0.9);
+}
+
+.line {
+    margin-top: 20px;
+    border-top: 1px solid black;
+    width: 100%;
+    max-width: 15rem;
+    margin-inline: auto;
+}
+
+.info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.name {
+    font-size: 2.5rem;
+}
+
+.jobtitle {
+    margin-top: 10px;
+    font-style: italic;
+    color: #444444;
+}
+
+.description {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background-color: rgba(116, 226, 226, 0.0);
+    width: 30vw;
+    height: 100%;
+    padding: 5px;
+    border-radius: 20px;
+    margin: auto;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.description:hover {
+    background-color: rgba(56, 56, 56, 0.7);
+    opacity: 1;
+}
+
+.teams-introduction {
+    margin-top: 50pt;
+    font-family: 'Play';
+    font-weight: bold;
+    font-size: 25pt;
+    text-align: left;
+}
+
+.blockade {
+    border: 0;
+    height: 5px;
+    background-color: #6C757D;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.teams-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+@media (min-width: 768px) {
+    .teams-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .teams-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .person {
+        max-width: 10rem;
+    }
+    .line {
+        max-width: 10rem;
+    }
+    .name {
+        font-size: 2rem;
+    }
+    .description {
+        width: 70vw;
+    }
+}

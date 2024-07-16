@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <%- include('../libraries/ui-libraries') %>
+        <style>
+            .caption {
+                font-size: 0.9em;
+                color: white;
+                margin-top: 5px;
+            }
+
+            body {
+                background-color: black;
+                color: white;
+            }
+
+            .title-bar {
+                color: white;
+                font-size: 3.5rem;
+            }
+
+            .primary {
+                background-color: white !important;
+                color: black;
+            }
+
+
+            .sect-title {
+                border-bottom: black 1px solid;
+            }
+        </style>
+</head>
+
+<%- include('navbar', {urlPath}) %>
+
+<body>
+    <h1 class="title-bar text-start px-4 py-4">Events</h1>
+    <div class="container">
+        <div class="row gy-4 mx-2">
+            <div class="primary col-12">
+                <div class="row my-2">
+                    <div class="col">
+                        <div class="row mx-0">
+                            <span class="col-12 px-0 fs-2 sect-title">TinyML Bootcamp</span>
+                            <span class="col-12 px-0 pt-2">
+                                A 3-day in-person bootcamp for students who share an interest in AI and machine
+                                learning. With
+                                expert mentors and instructors, the students will learn about the basic concepts of
+                                machine
+                                learning and how to build their models using ML techniques.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="primary col-12">
+                <div class="row my-2">
+                    <div class="col">
+                        <div class="row mx-0">
+                            <span class="col-12 px-0 fs-2 sect-title">Day 1</span>
+                            <span class="col-12 px-0 pt-2">
+                                Morning:
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="primary col-12">
+                <div class="row my-2">
+                    <div class="col">
+                        <div class="row mx-0">
+                            <span class="col-12 px-0 fs-2 sect-title">Day 2</span>
+                            <span class="col-12 px-0 pt-2">
+                                Morning:
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="primary col-12">
+                <div class="row my-2">
+                    <div class="col">
+                        <div class="row mx-0">
+                            <span class="col-12 px-0 fs-2 sect-title">Day 3</span>
+                            <span class="col-12 px-0 pt-2">
+                                Morning:
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTensor - Post</title>
+    <%- include('../libraries/ui-libraries') %>
+    <link rel="stylesheet" href="/stylesheets/posts.css">
+</head>
+
+<%- include('../templates/navbar', {urlPath: '/news'}) %>
+
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="advertisement-box mt-5 col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
+            <% const randomAd1 = randoms[Math.floor(Math.random() * randoms.length)]; %>
+            <div class="card news-item mb-3">
+                <img src="<%= randomAd1.data.type === 'News' ? 'https://bccare.ca/wp-content/uploads/breakingnews.jpg' : randomAd1.data.type === 'Events' ? 'https://th.bing.com/th/id/OIP.qBAeUZhNXTjMnXic-d1zoAHaG2?w=800&h=740&rs=1&pid=ImgDetMain' : randomAd1.data.type === 'Announcements' ? 'https://th.bing.com/th/id/R.3ec29551ef6bb524a00cf8030d0a8c4a?rik=QC9XE13b8IhOzA&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fLcd%2fojE%2fLcdojE7oi.jpg&ehk=BZEzuH5IXM5iZ32G1JJUur9gZhcd%2f1FfRXjmRT1GPcg%3d&risl=&pid=ImgRaw&r=0' : '' %>" class="card-img-top thumbnail" alt="TinyTensor Thumbnail News">
+                <div class="card-body">
+                    <h5 class="card-title"><%= randomAd1.data.title %></h5>
+                    <p class="card-text">
+                        <% if (randomAd1.data.type === 'News') { %>
+                            <span class="badge badge-success"><%- randomAd1.data.type %></span>
+                        <% } else if (randomAd1.data.type === 'Events') { %>
+                            <span class="badge badge-info"><%- randomAd1.data.type %></span>
+                        <% } else if (randomAd1.data.type === 'Announcements') { %>
+                            <span class="badge badge-danger"><%- randomAd1.data.type %></span>
+                        <% } else { %>
+                            <span class="badge badge-secondary"><%- randomAd1.data.type %></span>
+                        <% } %>
+                    </p>
+                    <a href="/news/<%= randomAd1.id %>" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <% const randomAd2 = randoms[Math.floor(Math.random() * randoms.length)]; %>
+            <div class="card news-item">
+                <img src="<%= randomAd2.data.type === 'News' ? 'https://bccare.ca/wp-content/uploads/breakingnews.jpg' : randomAd2.data.type === 'Events' ? 'https://th.bing.com/th/id/OIP.qBAeUZhNXTjMnXic-d1zoAHaG2?w=800&h=740&rs=1&pid=ImgDetMain' : randomAd2.data.type === 'Announcements' ? 'https://th.bing.com/th/id/R.3ec29551ef6bb524a00cf8030d0a8c4a?rik=QC9XE13b8IhOzA&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fLcd%2fojE%2fLcdojE7oi.jpg&ehk=BZEzuH5IXM5iZ32G1JJUur9gZhcd%2f1FfRXjmRT1GPcg%3d&risl=&pid=ImgRaw&r=0' : '' %>" class="card-img-top thumbnail" alt="TinyTensor Thumbnail News">
+                <div class="card-body">
+                    <h5 class="card-title"><%= randomAd2.data.title %></h5>
+                    <p class="card-text">
+                        <% if (randomAd2.data.type === 'News') { %>
+                            <span class="badge badge-success"><%- randomAd2.data.type %></span>
+                        <% } else if (randomAd2.data.type === 'Events') { %>
+                            <span class="badge badge-info"><%- randomAd2.data.type %></span>
+                        <% } else if (randomAd2.data.type === 'Announcements') { %>
+                            <span class="badge badge-danger"><%- randomAd2.data.type %></span>
+                        <% } else { %>
+                            <span class="badge badge-secondary"><%- randomAd2.data.type %></span>
+                        <% } %>
+                    </p>
+                    <a href="/news/<%= randomAd2.id %>" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+            <div class="post" id="post">
+                <div class="author col-md-12 col-sm-10 col-xs-10">
+                    <div class="pfp col-md-12 col-sm-12 col-xs-12"></div>
+                    <div class="authorname col-md-12 col-sm-12 col-xs-12">
+                        <b><span style="color: #007BFF;">TinyTensor</span> Administrator</b>
+                    </div>
+                </div>
+                <div class="title">
+                    <h2><strong><%= newsData.data.title %></strong></h2>
+                </div>
+                <div class="type-post">
+                    <% if (newsData.data.type === 'News') { %>
+                        <span class="badge badge-success"><%- newsData.data.type %></span>
+                    <% } else if (newsData.data.type === 'Events') { %>
+                        <span class="badge badge-info"><%- newsData.data.type %></span>
+                    <% } else if (newsData.data.type === 'Announcements') { %>
+                        <span class="badge badge-danger"><%- newsData.data.type %></span>
+                    <% } else { %>
+                        <span class="badge badge-secondary"><%- newsData.data.type %></span>
+                    <% } %>
+                </div>
+                <div class="postdesc" id="postdesc">
+                    <%- newsData.data.content %>
+                </div>
+                <div class="showmore" id="showmore">
+                    <button class="show" id="show">Show more...</button>
+                </div>
+            </div>
+
+            <div class="blurbg" id="blurbg">
+
+            </div>
+
+            <div class="details" id="details">
+                <div class="picture">
+
+                </div>
+                <div class="postdetails" id="postdetails">
+                    <div class="exit">
+                        <button class="exitbutton" id="exitbutton">X</button>
+                    </div>
+                    <div class="postname" id="postname">
+                        Author: <b>Admin</b>
+                    </div>
+                    <div class="postname" id="postdate">
+                        Date Posted: <b>30/06/2024</b>
+                    </div>
+                    <div class="postname" id="postdetail">
+                        Description: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda cumque libero sequi dolores aut blanditiis illum nulla atque rem, magni eveniet iste! Tenetur at cum reprehenderit suscipit quisquam vero blanditiis.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="advertisement-box mt-5 col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
+            <% const randomAd3 = randoms[Math.floor(Math.random() * randoms.length)]; %>
+            <div class="card news-item mb-3">
+                <img src="<%= randomAd3.data.type === 'News' ? 'https://bccare.ca/wp-content/uploads/breakingnews.jpg' : randomAd3.data.type === 'Events' ? 'https://th.bing.com/th/id/OIP.qBAeUZhNXTjMnXic-d1zoAHaG2?w=800&h=740&rs=1&pid=ImgDetMain' : randomAd3.data.type === 'Announcements' ? 'https://th.bing.com/th/id/R.3ec29551ef6bb524a00cf8030d0a8c4a?rik=QC9XE13b8IhOzA&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fLcd%2fojE%2fLcdojE7oi.jpg&ehk=BZEzuH5IXM5iZ32G1JJUur9gZhcd%2f1FfRXjmRT1GPcg%3d&risl=&pid=ImgRaw&r=0' : '' %>" class="card-img-top thumbnail" alt="TinyTensor Thumbnail News">
+                <div class="card-body">
+                    <h5 class="card-title"><%= randomAd3.data.title %></h5>
+                    <p class="card-text">
+                        <% if (randomAd3.data.type === 'News') { %>
+                            <span class="badge badge-success"><%- randomAd3.data.type %></span>
+                        <% } else if (randomAd3.data.type === 'Events') { %>
+                            <span class="badge badge-info"><%- randomAd3.data.type %></span>
+                        <% } else if (randomAd3.data.type === 'Announcements') { %>
+                            <span class="badge badge-danger"><%- randomAd3.data.type %></span>
+                        <% } else { %>
+                            <span class="badge badge-secondary"><%- randomAd3.data.type %></span>
+                        <% } %>
+                    </p>
+                    <a href="/news/<%= randomAd3.id %>" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <% const randomAd4 = randoms[Math.floor(Math.random() * randoms.length)]; %>
+            <div class="card news-item">
+                <img src="<%= randomAd4.data.type === 'News' ? 'https://bccare.ca/wp-content/uploads/breakingnews.jpg' : randomAd4.data.type === 'Events' ? 'https://th.bing.com/th/id/OIP.qBAeUZhNXTjMnXic-d1zoAHaG2?w=800&h=740&rs=1&pid=ImgDetMain' : randomAd4.data.type === 'Announcements' ? 'https://th.bing.com/th/id/R.3ec29551ef6bb524a00cf8030d0a8c4a?rik=QC9XE13b8IhOzA&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fLcd%2fojE%2fLcdojE7oi.jpg&ehk=BZEzuH5IXM5iZ32G1JJUur9gZhcd%2f1FfRXjmRT1GPcg%3d&risl=&pid=ImgRaw&r=0' : '' %>" class="card-img-top thumbnail" alt="TinyTensor Thumbnail News">
+                <div class="card-body">
+                    <h5 class="card-title"><%= randomAd4.data.title %></h5>
+                    <p class="card-text">
+                        <% if (randomAd4.data.type === 'News') { %>
+                            <span class="badge badge-success"><%- randomAd4.data.type %></span>
+                        <% } else if (randomAd4.data.type === 'Events') { %>
+                            <span class="badge badge-info"><%- randomAd4.data.type %></span>
+                        <% } else if (randomAd4.data.type === 'Announcements') { %>
+                            <span class="badge badge-danger"><%- randomAd4.data.type %></span>
+                        <% } else { %>
+                            <span class="badge badge-secondary"><%- randomAd4.data.type %></span>
+                        <% } %>
+                    </p>
+                    <a href="/news/<%= randomAd4.id %>" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+<%- include('../templates/footer') %>
+<script type="module" src="/javascripts/posts.js"></script>
+<script type="module" src="/javascripts/postsmodule.js"></script>
+</html>

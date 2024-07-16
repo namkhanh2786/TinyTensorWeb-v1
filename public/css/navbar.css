@@ -1,0 +1,69 @@
+.nav-item::after, 
+.nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #007BFF;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-in-out;
+}
+
+.nav-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-item:not(.active) {
+    background-color: #F8F9FA;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border .15s ease-in-out;
+}
+
+.nav-item {
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand, .navbar-brand:hover, .navbar-brand:focus, .nav-link, .nav-link:hover, .nav-link:focus {
+    color: #007BFF;
+    height: 100%;
+}
+
+.nav-link {
+    padding: 1rem 0.75rem;
+    margin-right: 1pt;
+    --bs-navbar-nav-link-padding-x: 0.8rem;
+}
+
+.navbar-brand {
+    display: none;
+    margin-right: 1rem;
+    width: 100pt;
+}
+
+nav.navbar {
+    background-color: #F8F9FA;
+    padding: 0 0 0;
+    height: 80pt;
+}
+
+.nav-item.active {
+    background-color: #007BFF;
+    height: 100%;
+}
+
+.nav-item.active .nav-link {
+    color: #F8F9FA;
+}
+
+.nav-item:not(.active):hover {
+    color: #007BFF;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out, border .15s ease-in-out;
+}

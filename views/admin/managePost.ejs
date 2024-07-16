@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Post</title>
+    <%- include('../libraries/ui-libraries') %>
+    <link rel="stylesheet" href="../stylesheets/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="logo">
+                        <h1 class="logotext"><span>TinyML</span> Bootcamp</h1>
+                    </div>
+                    <i class="fa fa-bars menu-toggle"></i>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                    </button>
+                </div>
+            </header>
+        
+            <div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row admin-wrapper">
+                    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-6 collapse d-lg-block left-sidebar" id="sidebar">
+                        <ul class="nav flex-column p-3">
+                            <li class="nav-item"><a class="nav-link" href="/administration">Manage Post</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/administration/createBlog">Add Post</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout" id="logout-side-button">Logout</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="col-lg-10 col-md-12 col-sm-12 col-xs-6 admin-content">
+                        <div class="content">
+                            <% if (flashMessage1 && flashMessage1.length > 0) { %>
+                                <div class="alert alert-danger" role="alert">
+                                    <%= flashMessage1[0] %>
+                                </div>
+                            <% } %>
+                            <% if (flashMessage2 && flashMessage2.length > 0) { %>
+                                <div class="alert alert-success" role="success">
+                                    <%= flashMessage2[0] %>
+                                </div>
+                            <% } %>
+                            <h2 class="page-title">Manage Post</h2>
+        
+                            <table class="table table-bordered col-12">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Type</th>
+                                        <th>Title</th>
+                                        <th>Date Added (d/M/y)</th>
+                                        <th>Date Edited (d/M/y)</th>
+                                        <th colspan="2">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% jsonData.forEach((item, index) => { %>
+                                        <tr>
+                                            <td><%= item.id %></td>
+                                            <td><%= item.data.type %></td>
+                                            <td><%= item.data.title %></td>
+                                            <td><%= new Date(item.data.createdAt.seconds * 1000).toLocaleDateString('en-GB') %></td>
+                                            <td><%= new Date(item.data.updatedAt.seconds * 1000).toLocaleDateString('en-GB') %></td>
+                                            <td>
+                                                <a href="/administration/updateBlog/<%= item.id %>" class="btn btn-sm btn-success">Edit</a>
+                                            </td>
+                                            <td>
+                                                <form action="/administration/deleteBlog" method="POST" class="delete-form">
+                                                    <input type="hidden" name="blogId" value="<%= item.id %>">
+                                                    <button type="button" class="btn btn-sm btn-danger delete-btn">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="number-container text-center">
+                            <% if (totalPages > 1) { %>
+                                <nav>
+                                    <ul class="pagination justify-content-center">
+                                        <% if (currentPage > 1) { %>
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page=<%= currentPage - 1 %>" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                        <% } %>
+                                        <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                                        <% if (currentPage > 3) { %>
+                                            <li class="page-item"><span class="page-link">...</span></li>
+                                        <% } %>
+                                        <% for (let i = Math.max(2, currentPage - 1); i <= Math.min(currentPage + 1, totalPages - 1); i++) { %>
+                                            <li class="page-item <%= i === currentPage ? 'active' : '' %>"><a class="page-link" href="?page=<%= i %>"><%= i %></a></li>
+                                        <% } %>
+                                        <% if (currentPage < totalPages - 2) { %>
+                                            <li class="page-item"><span class="page-link">...</span></li>
+                                        <% } %>
+                                        <% if (totalPages > 1) { %>
+                                            <li class="page-item"><a class="page-link" href="?page=<%= totalPages %>"><%= totalPages %></a></li>
+                                        <% } %>
+                                        <% if (currentPage < totalPages) { %>
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page=<%= currentPage + 1 %>" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        <% } %>
+                                    </ul>
+                                </nav>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="../javascripts/adminPageScript.js"></script>
+</html>

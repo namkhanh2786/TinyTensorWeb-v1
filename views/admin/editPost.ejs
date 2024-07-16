@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Edit Post</title>
+    <%- include('../libraries/ui-libraries') %>
+    <link rel="stylesheet" href="../stylesheets/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="logo">
+                        <h1 class="logotext"><span>TinyML</span> Bootcamp</h1>
+                    </div>
+                    <i class="fa fa-bars menu-toggle"></i>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                    </button>
+                </div>
+            </header>
+        
+            <div class="container-fluid col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row admin-wrapper">
+                    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-6 collapse d-lg-block left-sidebar" id="sidebar">
+                        <ul class="nav flex-column p-3">
+                            <li class="nav-item"><a class="nav-link" href="/administration">Manage Post</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/administration/createBlog">Add Post</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/logout" id="logout-side-button">Logout</a></li>
+                        </ul>
+                    </div>
+        
+                    <div class="col-lg-10 col-md-12 col-sm-12 col-xs-6 admin-content">
+                        <div class="content">
+                            <% if (flashMessage1 && flashMessage1.length > 0) { %>
+                                <div class="alert alert-danger" role="alert">
+                                    <%= flashMessage1[0] %>
+                                </div>
+                            <% } %>
+                            <% if (flashMessage2 && flashMessage2.length > 0) { %>
+                                <div class="alert alert-success" role="success">
+                                    <%= flashMessage2[0] %>
+                                </div>
+                            <% } %>
+                            <h2 class="page-title">Edit Post</h2>
+                            <form action="/administration/updateBlogConfirm" method="POST">
+                                <div class="titlebox">
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="title-input" value="<%= jsonData.data.title %>" required>
+                                </div>
+                                <div class="marginForDiv">
+                                    <label>Content</label>
+                                    <textarea name="content" id="body"><%= jsonData.data.content %></textarea>
+                                </div>
+                                <div class="marginForDiv">
+                                    <label>Topic</label>
+                                    <select name="type" class="title-input select-box">
+                                        <option value="News" <%= jsonData.data.type === 'News' ? 'selected' : '' %>>News</option>
+                                        <option value="Events" <%= jsonData.data.type === 'Events' ? 'selected' : '' %>>Events</option>
+                                        <option value="Announcements" <%= jsonData.data.type === 'Announcements' ? 'selected' : '' %>>Announcements</option>
+                                    </select>
+                                </div>
+                                <div class="marginForDiv">
+                                    <button type="submit" class="btnMain submitBtn">SAVE CHANGES</button>
+                                </div>
+                                <input type="hidden" name="blogId" value="<%= jsonData.id %>">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="../javascripts/adminPageScript.js"></script>
+</html>

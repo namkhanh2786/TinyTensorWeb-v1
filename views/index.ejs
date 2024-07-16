@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyTensor - Home</title>
+    <%- include('./libraries/ui-libraries') %>
+    <link rel="stylesheet" href="../stylesheets/index.css">
+    <script type="module" src="../javascripts/index.js"></script>
+</head>
+<%- include('./templates/navbar', {urlPath: '/'}) %>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="infoForm" class="col-12 d-flex flex-wrap">
+                <div id="infoForm-text" class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                    <span id="infoForm-text-bigText">
+                        TinyTensor, a TinyML Bootcamp: <span class="c007BFF">[TOPIC OF THIS YEAR]</span>
+                    </span>
+                    <br/>
+                    <span id="infoForm-text-mediumText">
+                        This year, we want to operate a project of <span class="c007BFF">TinyML</span> about <span class="c007BFF">[TOPIC OF THIS YEAR]</span> to students who are interested in <span class="c007BFF">TinyML</span>, a potential subfield of <span class="c007BFF">Machine Learning (ML)</span>.
+                        <br/>
+                        Through the bootcamp, we hope participants not only
+                        <span class="highlight-container">
+                            <span class="highlight">understand deeper</span>
+                        </span>
+                        the training machine process but also
+                        <span class="highlight-container">
+                            <span class="highlight">make new friends </span>
+                        </span>
+                        throughout our meaningful journey this year!
+                    </span>
+                </div>
+            
+                <div class="separator col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-12 col-12"></div>
+            
+                <div id="infoForm-form" class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <form id="infoForm-form-gettingInformationForm" class="col-12" method="POST">
+                        <span class="form-bigText col-12">PARTICIPATE TODAY!</span>
+                        <span class="form-mediumText col-12">Your tech career is waiting. Tell us a little about you - and we'll get in touch with more info.</span>
+                        <input name="fullName" class="form-input form__input col-12" placeholder="Full Name *" required/>
+                        <input name="email" class="form-input form__input col-12" type="email" placeholder="Email *" required/>
+                        <input name="otherInfo" class="form-input form__input col-12" placeholder="Other contact information"/>
+                        <div class="aboutMe-textarea">
+                            <textarea name="aboutMe" id="form__textArea" class="col-12 mt-5" placeholder="Tell us more about you!"></textarea>
+                        </div>
+                        <span class="col-12 form-smallText">We will review your valuable application and contact you via email soon. Stay tuned!</span>
+                        <button type="submit" class="form__submitButton col-12">SEND APPLICATION</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="scheduleSection" class="col-12">
+                <span class="schedule-bigText col-12">TinyTensor Periods</span>
+                <ul id="timeline">
+                    <li style="--accent-color:#41516C">
+                        <div class="date">July 29, 2024</div>
+                        <div class="title">Hanoi - Day 1 - Introduction to Machine Learning and Possible Applications</div>
+                        <div class="descr">
+                            <b>[Morning]</b> Students will join in some activities to warm-up and get introduced about the overview of machine learning.
+                            <br/>
+                            <b>[Afternoon]</b> Students will have a chance to listen to mentors talking about basic concepts and tools setup for using Arduino Tiny machine learning BLE 33 kits.
+                        </div>
+                    </li>
+                    <li style="--accent-color:#FBCA3E">
+                        <div class="date">July 30, 2024</div>
+                        <div class="title">Hanoi - Day 2 - Data Exploration and Preprocessing</div>
+                        <div class="descr">
+                            <b>[Morning]</b> Students will be introduced about data and preprocessing techniques in training machines.
+                            <br/>
+                            <b>[Afternoon]</b> Students will practise with Arduino BLE 33 kits about handling datasets.
+                        </div>
+                    </li>
+                    <li style="--accent-color:#E24A68">
+                        <div class="date">July 31, 2024</div>
+                        <div class="title">Hanoi - Day 3 - Building models, Model Evaluation and Improvement</div>
+                        <div class="descr">
+                            <b>[Morning]</b> Students will be introduced about different types of models (e.g., classification, regression)
+                            <br/>
+                            <strong><small>*This session will be made beginner-friendly so everyone can learn something from the bootcamp.</small></strong>
+                            <br/>
+                            <b>[Afternoon]</b> Students will observe mentors and practise building simple models with mentors'guidance, and learners will have opportunities to report their awesome projects through presentation.
+                        </div>
+                    </li>
+                    <li style="--accent-color:#1B5F8C">
+                        <div class="date">August 3, 2024</div>
+                        <div class="title">Ho Chi Minh City - Day 1 - Introduction to Machine Learning and Possible Applications</div>
+                        <div class="descr">
+                            <b>[Morning]</b> Students will join in some activities to warm-up and get introduced about the overview of machine learning.
+                            <br/>
+                            <b>[Afternoon]</b> Students will have a chance to listen to mentors talking about basic concepts and tools setup for using Arduino Tiny machine learning BLE 33 kits.
+                        </div>
+                    </li>
+                    <li style="--accent-color:#4CADAD">
+                        <div class="date">August 4, 2024</div>
+                        <div class="title">Ho Chi Minh City - Day 2 - Data Exploration and Preprocessing</div>
+                        <div class="descr">
+                            <b>[Morning]</b> Students will be introduced about data and preprocessing techniques in training machines.
+                            <br/>
+                            <b>[Afternoon]</b> Students will practise with Arduino BLE 33 kits about handling datasets.
+                        </div>
+                    </li>
+                    <li style="--accent-color:#772787">
+                        <div class="date">August 5, 2024</div>
+                        <div class="title">Ho Chi Minh City - Day 3 - Building models, Model Evaluation and Improvement</div>
+                        <div class="descr">
+                            <b>[Morning]</b> Students will be introduced about different types of models (e.g., classification, regression)
+                            <br/>
+                            <strong><small>*This session will be made beginner-friendly so everyone can learn something from the bootcamp.</small></strong>
+                            <br/>
+                            <b>[Afternoon]</b> Students will observe mentors and practise building simple models with mentors'guidance, and learners will have opportunities to report their awesome projects through presentation.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="tinyMLDefinitionSection" class="col-12">
+                <span class="tinyMLDefinitionQuestion col-12">But, what is TinyML?</span>
+                <br/>
+                <div class="tinyMLDefinition-section">
+                    <img class="tinyMLDefinition-img col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" src="https://img.freepik.com/free-vector/organic-flat-people-asking-questions-illustration_23-2148906283.jpg?t=st=1721009362~exp=1721012962~hmac=b1164e48368893cb08d11392431c765ea0f669e88d3e160d82301667799edca4&w=740" alt="TINYML DEFINITION VECTOR"/>
+                    <span class="tinyMLDefinition col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum quisque non tellus orci ac auctor augue mauris augue. Sed adipiscing diam donec adipiscing tristique risus. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Imperdiet massa tincidunt nunc pulvinar. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Viverra nibh cras pulvinar mattis nunc sed. Laoreet sit amet cursus sit. Lectus sit amet est placerat in egestas. Massa id neque aliquam vestibulum morbi. Adipiscing bibendum est ultricies integer quis auctor. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Quam pellentesque nec nam aliquam.
+                    </span>
+                </div>                
+            </div>
+
+            <div id="tinyMLApplicationSection" class="col-12">
+                <span class="tinyMLApplicationQuestion col-12">How TinyML affects our world.</span>
+                <br/>
+                <div class="tinyMLApplication-sectionTextRightImgLeft">
+                    <span class="tinyMLDefinition col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum quisque non tellus orci ac auctor augue mauris augue. Sed adipiscing diam donec adipiscing tristique risus. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Imperdiet massa tincidunt nunc pulvinar. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Viverra nibh cras pulvinar mattis nunc sed. Laoreet sit amet cursus sit. Lectus sit amet est placerat in egestas. Massa id neque aliquam vestibulum morbi. Adipiscing bibendum est ultricies integer quis auctor. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Quam pellentesque nec nam aliquam.
+                    </span>
+                    <img class="tinyMLApplication-img col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" src="https://img.freepik.com/free-vector/organic-flat-people-asking-questions-illustration_23-2148906283.jpg?t=st=1721009362~exp=1721012962~hmac=b1164e48368893cb08d11392431c765ea0f669e88d3e160d82301667799edca4&w=740" alt="TINYML APPLICATION VECTOR"/>
+                </div>
+                <div class="tinyMLApplication-sectionTextLeftImgRight">
+                    <img class="tinyMLApplication-img col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12" src="https://img.freepik.com/free-vector/organic-flat-people-asking-questions-illustration_23-2148906283.jpg?t=st=1721009362~exp=1721012962~hmac=b1164e48368893cb08d11392431c765ea0f669e88d3e160d82301667799edca4&w=740" alt="TINYML APPLICATION VECTOR"/>
+                    <span class="tinyMLDefinition col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rutrum quisque non tellus orci ac auctor augue mauris augue. Sed adipiscing diam donec adipiscing tristique risus. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Imperdiet massa tincidunt nunc pulvinar. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Viverra nibh cras pulvinar mattis nunc sed. Laoreet sit amet cursus sit. Lectus sit amet est placerat in egestas. Massa id neque aliquam vestibulum morbi. Adipiscing bibendum est ultricies integer quis auctor. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Quam pellentesque nec nam aliquam.
+                    </span>
+                </div>                
+            </div>
+
+            <div id="tinyMLFutureJobSection" class="col-12">
+                <span class="tinyMLFutureJobStatement">Jobs related to TinyML</span>
+                <br/>
+                <div class="tinyMLFutureJob-section">
+                    <ol class="gradient-list">
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>Aenean tincidunt elit at ipsum cursus, vitae interdum nulla suscipit.</li>
+                        <li>Curabitur in orci vel risus facilisis accumsan.</li>
+                        <li>Morbi eleifend tortor lacinia sapien sagittis, quis pellentesque felis egestas.</li>
+                        <li>Aenean viverra dui quis leo lacinia fringilla.</li>
+                        <li>Sed varius lectus ac condimentum egestas.</li>
+                        <li>Maecenas faucibus lorem nec lorem posuere, a rhoncus velit porttitor.</li>
+                        <li>Proin porta arcu ac elit malesuada pulvinar.</li>
+                        <li>Phasellus vitae felis sit amet mi gravida volutpat.</li>
+                        <li>Curabitur vulputate urna non efficitur interdum.</li>
+                        <li>Curabitur dapibus enim in consectetur imperdiet.</li>
+                        <li>Suspendisse consectetur nibh non condimentum porta.</li>
+                        <li>Ut placerat diam in cursus aliquet.</li>
+                        <li>Praesent vitae quam id tortor malesuada viverra ut at elit.</li>
+                        <li>Vivamus feugiat justo id volutpat rutrum.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="questionSection" class="col-12">
+                <form class="col-12" id="questionForm" method="POST">
+                    <h4>Feel free to ask us by filling this form!</h4>
+                    <div class="" id="infoBox">
+                        <div class="form_group field">
+                            <input type="input" class="form_field" placeholder="Enter your email address here." name="email" id="emailInput" required />
+                            <label for="email" class="form_label">Your Email</label>
+                        </div>
+                        <div class="form_group field">
+                            <input type="input" class="form_field" placeholder="Enter your full name here." name="name" id="nameInput" required />
+                            <label for="name" class="form_label">Your Name</label>
+                        </div>
+                    </div>
+                    <div class="receiverQuestion form_group field">
+                        <label>Question For Us:</label>
+                        <textarea id="questionInput" name="question" placeholder="Enter your question here."></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary mt-2" id="askButton">Ask Now!</button>
+                    </div>
+                </form>
+            </div>
+        </div>        
+    </div>
+</body>
+<%- include('./templates/footer') %>
+</html>

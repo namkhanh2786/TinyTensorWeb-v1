@@ -1,0 +1,132 @@
+#page-name-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#page-name-in-body .page-name {
+    color: #007BFF;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 30pt;
+}
+
+#filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20pt;
+    justify-content: space-between;
+}
+
+.btn .option {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    color: #F8F9FA;
+}
+
+.btn .option:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.search__input {
+    width: 100%;
+    max-width: 500pt;
+    padding: 12px 24px;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: #6C757D;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 1px solid #6C757D;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    font-family: 'Playfair Display';
+}
+
+.search__input::placeholder {
+    color: rgba(87, 87, 86, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.search__input:hover,
+.search__input:focus {
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
+}
+.btn {
+    flex: 1 1 auto;
+    margin: 5px;
+}
+
+#news-container {
+    font-family: 'Playfair Display';
+}
+
+.card {
+    border: 1pt solid #F8F9FA;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.news-item img {
+    height: 200pt;
+    width: 100%;
+}
+
+@media (max-width: 762px) {
+
+    .news-item img {
+        height: 250pt;
+        width: 100%;
+    }
+
+    .news-item {
+        width: 70%;
+        margin-left: 15%;
+    }
+}
+
+.news-null-message {
+    font-family: 'Oswald';
+    font-size: 70pt;
+    color: #6C757D;
+    justify-self: center;
+}
+
+@media (max-width: 576px) {
+    #page-name-body,
+    #filter-bar {
+        flex-direction: column;
+    }
+    
+    .search__input {
+        max-width: 100%;
+    }
+
+    .news-item img {
+        height: 250pt;
+        width: 100%;
+    }
+
+    .news-item {
+        width: 100%;
+        margin-left: 0%;
+    }
+}

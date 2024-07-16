@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TinyTensor - Access to Admin</title>
+
+    <%- include('../libraries/ui-libraries') %>
+    <link rel="stylesheet" href="../stylesheets/index.css" />
+</head>
+<%- include('../templates/navbar', {urlPath: '/preAccessAdministration'}) %>
+<body id="bodyPasswordForm">
+    <div class="container" id="passwordForm">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 col-xxl-6">
+                <div class="card border border-light-subtle shadow-sm glassy-card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 first-col">
+                                <img src="https://infos-it.fr/wp-content/uploads/2024/03/TinyML-intelligence-artificielle.jpg" alt="TinyML Bootcamp Pictures" class="img-fluid form-secret-img"/>
+                            </div>
+                            <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 second-col">
+                                <div class="text-center mb-3">
+                                    <a href="/">
+                                        <img src="./assets/img/bsb-logo.svg" alt="TinyML Bootcamp Official Logo" width="175" height="57" />
+                                    </a>
+                                </div>
+                                <h2 class="fw-normal text-center">
+                                    To access administration page, you will need to enter the correct <span style="color: cyan; text-shadow: 0 0 2pt #007BFF">SECRET</span>.
+                                </h2>
+                                <% if (flashMessage && flashMessage.length > 0) { %>
+                                    <div class="alert alert-danger" role="alert">
+                                        <%= flashMessage[0] %>
+                                    </div>
+                                <% } %>
+                                <form id="passwordFormSend" action="/verifyCode" method="POST">
+                                    <div class="row overflow-hidden">
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input
+                                                    autocomplete="new-password"
+                                                    type="password"
+                                                    class="form-control"
+                                                    name="password"
+                                                    id="password"
+                                                    placeholder="Enter the secret here"
+                                                    required
+                                                />
+                                                <label for="password" class="form-label">secret</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="d-grid my-3">
+                                                <button class="btn secret-submit btn-lg" type="submit" id="fire">
+                                                    Validate Me
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <div class="col-12 mt-3 homelink">
+                            <a href="/">Return to home</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>       
+</body>
+<%- include('../templates/footer') %>
+<script type="module" src="../javascripts/accessAdmin.js"></script>
+</html>
