@@ -27,7 +27,7 @@ import multer from 'multer';
 import bodyParser from 'body-parser';
 import nodemailer from 'nodemailer';
 import flash from 'express-flash';
-import session from 'express-session';
+import session from 'cookie-session';
 import fs from 'fs';
 const db = getFirestore(app2);
 const upload = multer();
@@ -56,6 +56,10 @@ const __dirname = dirname(__filename);
 app.get('/stylesheets/layout.css', (req, res) => {
     res.type('text/css');
     res.sendFile(path.join(__dirname, 'views', 'stylesheets', 'layout.css'));
+});
+app.get('/css/navbar.css', (req, res) => {
+    res.type('text/css');
+    res.sendFile(path.join(__dirname, 'public', 'css', 'navbar.css'));
 });
 
 //=================================================================

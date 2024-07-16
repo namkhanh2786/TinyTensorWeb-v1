@@ -19,6 +19,7 @@
     "@babel/preset-env": "^7.24.7",
     "@ckeditor/ckeditor5-build-classic": "^42.0.0",
     "body-parser": "^1.20.2",
+    "cookie-session": "^2.1.0",
     "dompurify": "^3.1.6",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
