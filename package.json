@@ -1,11 +1,11 @@
 {
   "name": "tiny-ml-web",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./server.js",
-    "run": "node ./server.js"
+    "build": "node server.js"
   },
   "type": "module",
   "keywords": [],
