@@ -1,4 +1,4 @@
-.nav-item::after, 
+.nav-item::after,
 .nav-item::before {
     content: '';
     position: absolute;
@@ -19,44 +19,59 @@
 
 .nav-item:not(.active) {
     background-color: #F8F9FA;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border .15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border 0.15s ease-in-out;
 }
 
 .nav-item {
-    margin-right: 1rem;
-    margin-top: 0.5rem;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+}
+
+.nav-item a {
+    padding-top: 30%;
+}
+
+@media (min-width: 992px) {
+    .nav-item {
+        margin-right: 1rem;
+    }
 }
 
 .navbar-brand, .navbar-brand:hover, .navbar-brand:focus, .nav-link, .nav-link:hover, .nav-link:focus {
     color: #007BFF;
-    height: 100%;
 }
 
 .nav-link {
     padding: 1rem 0.75rem;
-    margin-right: 1pt;
     --bs-navbar-nav-link-padding-x: 0.8rem;
+    display: block;
 }
 
 .navbar-brand {
     display: none;
-    margin-right: 1rem;
-    width: 100pt;
+    width: 120pt;
+    height: 200pt;
 }
 
 nav.navbar {
+    height: 100pt;
     background-color: #F8F9FA;
-    padding: 0 0 0;
-    height: 80pt;
+    padding: 0;
+}
+
+.navbar-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#navbarNav {
+    margin-left: -12pt;
+    height: 100%;
 }
 
 .nav-item.active {
     background-color: #007BFF;
-    height: 100%;
 }
 
 .nav-item.active .nav-link {
@@ -65,5 +80,5 @@ nav.navbar {
 
 .nav-item:not(.active):hover {
     color: #007BFF;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out, border .15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border 0.15s ease-in-out;
 }

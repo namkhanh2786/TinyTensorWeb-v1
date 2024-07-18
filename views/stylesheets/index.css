@@ -237,8 +237,8 @@
 
 #tinyMLDefinitionSection {
     background-color: beige;
-    text-align: center;
     padding-bottom: 50pt;
+    text-align: center;
 }
 
 .tinyMLDefinitionQuestion {
@@ -250,13 +250,14 @@
 .tinyMLDefinition-section {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .tinyMLDefinition-img {
     margin-top: 20pt;
     flex: 1 1 100%;
-    max-width: 35%;
-    height: 100%;
+    max-width: 50%;
+    height: 450pt;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -265,10 +266,10 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15pt;
     font-weight: 400;
-    letter-spacing: 1.5pt;
-    flex: 1 1 100%;
+    letter-spacing: 1pt;
+    text-align: left;
     margin-top: 20pt;
-    padding: 10px;
+    width: 1000pt;
     box-sizing: border-box;
 }
 
@@ -287,15 +288,15 @@
 .tinyMLApplication-sectionTextLeftImgRight, .tinyMLApplication-sectionTextRightImgLeft  {
     display: flex;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 15pt;
+    font-size: 20pt;
     margin-top: 50pt;
     flex-wrap: wrap;
 }
 
 .tinyMLApplication-img {
     flex: 1 1 100%;
-    max-width: 35%;
-    height: 75%;
+    max-width: 50%;
+    height: 450pt;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -422,7 +423,6 @@ ol.gradient-list {
 .form_field:placeholder-shown ~ .form_label {
     font-size: 1.3rem;
     cursor: text;
-    background-color: #003f72;
     top: 20px;
 }
 
@@ -432,7 +432,7 @@ ol.gradient-list {
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #fff;
+    color: #003f72;
 }
 
 .form_label::after {

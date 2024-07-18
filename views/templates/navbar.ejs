@@ -1,18 +1,13 @@
 <link rel="stylesheet" href="../css/navbar.css">
 
 <nav class="navbar navbar-expand-lg sticky-top ps-0">
-    <!-- <div class="navbar-brand py-0">
-            <a class="nav-link" href="/">G</a>
-    </div> -->
-    <img class="navbar-brand py-0" src="https://media.tenor.com/Brd6cmhLY2QAAAAM/huh-cat-huh-m4rtin.gif" alt="Brand Logo"  title="Placeholder">
+    <img class="navbar-brand py-0" src="https://media.tenor.com/Brd6cmhLY2QAAAAM/huh-cat-huh-m4rtin.gif" alt="Brand Logo" title="Placeholder">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        
-        <ul class="navbar-nav">
-            
+        <ul class="navbar-nav sticky-bottom">
             <% for (let [name, link] of [
                 ["Home", '/'],
                 ["About Us", '/aboutUs'],
@@ -21,9 +16,7 @@
                 ["Records", '/records'],
                 ['Admin', '/preAccessAdministration'],
             ]) { %>
-
-            <li class="nav-item fs-5 <%= urlPath == link && link == '/' || (link.includes(urlPath) && urlPath != '/') 
-            ? 'active' : '' %>">
+            <li class="nav-item fs-3 <%= urlPath == link && link == '/' || (link.includes(urlPath) && urlPath != '/') ? 'active' : '' %>">
                 <a class="nav-link text-center" href="<%= link %>"><%= name %></a>
             </li>
             <% } %>
@@ -32,12 +25,26 @@
 </nav>
 
 <script>
-    let logo = document.querySelector("img.navbar-brand")
-    let navbar = document.querySelector(".navbar")
-    logo.height = `${navbar.clientHeight}pt`
-    logo.style.display = "block"
+    let logo = document.querySelector("img.navbar-brand");
+    let navbar = document.querySelector(".navbar");
+    logo.style.height = `${navbar.clientHeight}px`;
+    logo.style.display = "block";
 
-    let navTabs = [...document.querySelectorAll("li.nav-item")]
-    let maxWidth = Math.max(...navTabs.map(tab => tab.clientWidth))
-    navTabs.forEach(tab => tab.style.width = `${maxWidth}px`)
+    let navTabs = [...document.querySelectorAll("li.nav-item")];
+    let maxWidth = Math.max(...navTabs.map(tab => tab.clientWidth));
+    console.log(maxWidth);
+
+    let customWidthStyle = document.createElement('style');
+    customWidthStyle.type = 'text/css';
+
+    let css = `
+    @media (min-width: 992px) {
+        li.nav-item {
+            width: ${maxWidth+1}px;
+        }
+    }
+    `;
+
+    customWidthStyle.innerHTML = css;
+    document.head.appendChild(customWidthStyle);
 </script>
