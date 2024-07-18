@@ -16,7 +16,7 @@
                 ["Records", '/records'],
                 ['Admin', '/preAccessAdministration'],
             ]) { %>
-            <li class="nav-item fs-3 <%= urlPath == link && link == '/' || (link.includes(urlPath) && urlPath != '/') ? 'active' : '' %>">
+            <li class="nav-item fs-5 <%= urlPath == link && link == '/' || (link.includes(urlPath) && urlPath != '/') ? 'active' : '' %>">
                 <a class="nav-link text-center" href="<%= link %>"><%= name %></a>
             </li>
             <% } %>

@@ -49,12 +49,12 @@
 
 .navbar-brand {
     display: none;
-    width: 120pt;
+    width: 100pt;
     height: 200pt;
 }
 
 nav.navbar {
-    height: 100pt;
+    height: 80pt;
     background-color: #F8F9FA;
     padding: 0;
 }
