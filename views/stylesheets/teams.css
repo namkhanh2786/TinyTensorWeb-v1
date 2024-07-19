@@ -89,6 +89,32 @@
     opacity: 1;
 }
 
+.description q {
+    font-size: 20pt;
+}
+
+.description span {
+    font-size: 15pt;
+}
+
+#mdv-img {
+    transform: scale(4);
+    margin-bottom: 100pt;
+    transition: transform 0.5s ease;
+}
+
+#nqm-img {
+    transform: scale(1.5);
+    margin-bottom: 20pt;
+    transition: transform 0.5s ease;
+}
+
+#tdn-img {
+    transform: scale(1.5);
+    margin-bottom: -70pt;
+    transition: transform 0.5s ease;
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
