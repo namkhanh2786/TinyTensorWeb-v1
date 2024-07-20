@@ -115,6 +115,10 @@
     transition: transform 0.5s ease;
 }
 
+#ddt-img {
+    margin-bottom: -9pt;
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
