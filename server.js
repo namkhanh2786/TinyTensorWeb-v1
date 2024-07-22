@@ -123,8 +123,8 @@ app.post('/getStudentsInfo', upload.none(), (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'namkhanhvuduy0867@gmail.com',
-            pass: 'hygy wxoy btou parq'
+            user: 'tinytensorteam@gmail.com',
+            pass: 'vund qhvf rrtg vghc'
         }
     });
 
@@ -137,7 +137,7 @@ app.post('/getStudentsInfo', upload.none(), (req, res) => {
     }
 
     let mailOptions = {
-        to: 'namkhanhvuduy0867@gmail.com', // Receiver's email
+        to: 'tinytensorteam@gmail.com', // Receiver's email
         subject: `TinyTensor - New Application from ${fullName}`,
         html: `${emailContent}`,
         headers: {
@@ -183,15 +183,15 @@ app.post('/sendQuestion', upload.none(), (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'namkhanhvuduy0867@gmail.com',
-            pass: 'hygy wxoy btou parq'
+            user: 'tinytensorteam@gmail.com',
+            pass: 'vund qhvf rrtg vghc'
         }
     });
 
     const emailContent = `<b><strong>Question</strong></b>: ${question}<br><br><strong>Sender's address</strong>: <i>${email}</i>`;
 
     let mailOptions = {
-        to: 'namkhanhvuduy0867@gmail.com', // Receiver's email
+        to: 'tinytensorteam@gmail.com', // Receiver's email
         subject: `TinyTensor - New Question from ${name}`,
         html: `${emailContent}`,
         headers: {
