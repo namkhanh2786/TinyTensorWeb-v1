@@ -136,7 +136,8 @@
 }
 
 #vdnk-img {
-    margin-bottom: -15pt;
+    margin-bottom: -5pt;
+    transform: scale(1);
 }
 
 #tpm-img {
@@ -149,6 +150,34 @@
 
 #dhd-img {
     transform: scale(1.2);
+}
+
+#nvny-img {
+    margin-bottom: -10pt;
+}
+
+#vad-img {
+    margin-bottom: -15pt;
+    transform: scale(1.5);
+}
+
+#dak-img {
+    margin-bottom: -5pt;
+    transform: scale(1.1);
+}
+
+#pca-img {
+    transform: scale(1.2);
+}
+
+#nmd-img {
+    transform: scale(2.4);
+    margin-bottom: -45pt;
+    padding-left: 20pt;
+}
+
+#tlbh-img {
+    transform: scale(0.7);
 }
 
 .teams-introduction {
