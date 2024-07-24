@@ -131,6 +131,26 @@
     margin-bottom: -9.5pt;
 }
 
+#nth-img {
+    margin-bottom: -15.5pt;
+}
+
+#vdnk-img {
+    margin-bottom: -15pt;
+}
+
+#tpm-img {
+    margin-bottom: -15pt;
+}
+
+#dmt-img {
+    margin-bottom: -15pt;
+}
+
+#dhd-img {
+    transform: scale(1.2);
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
