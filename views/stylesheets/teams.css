@@ -180,6 +180,15 @@
     transform: scale(0.7);
 }
 
+#vttl-img {
+    margin-bottom: -15pt;
+}
+
+#nnm-img {
+    margin-bottom: -10pt;
+    transform: scale(0.9);
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
