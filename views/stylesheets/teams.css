@@ -136,8 +136,8 @@
 }
 
 #vdnk-img {
-    margin-bottom: -5pt;
-    transform: scale(1);
+    margin-bottom: -15pt;
+    transform: scale(0.9);
 }
 
 #tpm-img {
@@ -187,6 +187,16 @@
 #nnm-img {
     margin-bottom: -10pt;
     transform: scale(0.9);
+}
+
+#hhs-img {
+    margin-bottom: -18pt;
+    transform: scale(0.9);
+}
+
+#dpt-img {
+    transform: scale(3.5);
+    right: 20%;
 }
 
 .teams-introduction {
