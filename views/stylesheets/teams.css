@@ -111,7 +111,7 @@
 
 #tdn-img {
     transform: scale(1.5);
-    margin-bottom: -70pt;
+    margin-bottom: -100pt;
     transition: transform 0.5s ease;
 }
 
@@ -120,7 +120,8 @@
 }
 
 #npth-img {
-    margin-bottom: -12.5pt;
+    margin-bottom: -45pt;
+    transform: scale(0.95);
 }
 
 #nat-img {
@@ -132,7 +133,8 @@
 }
 
 #nth-img {
-    margin-bottom: -15.5pt;
+    margin-bottom: -50pt;
+    transform: scale(1.03);
 }
 
 #vdnk-img {
@@ -141,7 +143,8 @@
 }
 
 #tpm-img {
-    margin-bottom: -15pt;
+    margin-bottom: -50pt;
+    transform: scale(1.03);
 }
 
 #dmt-img {
@@ -173,7 +176,7 @@
 #nmd-img {
     transform: scale(2.1);
     right: -15%;
-    margin-bottom: -45pt;
+    margin-bottom: -65pt;
 }
 
 #tlbh-img {
@@ -197,6 +200,11 @@
 #dpt-img {
     transform: scale(3.5);
     right: 20%;
+}
+
+#lht-img {
+    margin-bottom: -50pt;
+    transform: scale(0.9);
 }
 
 .teams-introduction {
