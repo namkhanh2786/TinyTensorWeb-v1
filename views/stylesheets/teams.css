@@ -207,6 +207,10 @@
     transform: scale(0.9);
 }
 
+#eo-img {
+    transform: scale(1.4);
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
