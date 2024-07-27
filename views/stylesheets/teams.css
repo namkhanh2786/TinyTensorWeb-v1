@@ -148,7 +148,8 @@
 }
 
 #dmt-img {
-    margin-bottom: -15pt;
+    margin-bottom: -40pt;
+    transform: scale(0.8);
 }
 
 #dhd-img {
