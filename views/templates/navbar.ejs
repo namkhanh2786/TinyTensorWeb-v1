@@ -18,7 +18,11 @@
                 ['Admin', '/preAccessAdministration'],
             ]) { %>
             <li class="nav-item fs-5 <%= urlPath == link && link == '/' || (link.includes(urlPath) && urlPath != '/') ? 'active' : '' %>">
-                <a class="nav-link text-center" href="<%= link %>"><%= name %></a>
+                <a class="navlink text-center" href="<%= link %>">
+                    <p>
+                        <%= name %>
+                    </p>
+                </a>
             </li>
             <% } %>
         </ul>
@@ -26,26 +30,27 @@
 </nav>
 
 <script>
-    let logo = document.querySelector("img.navbar-brand");
-    let navbar = document.querySelector(".navbar");
-    logo.style.height = `${navbar.clientHeight}px`;
-    logo.style.display = "block";
+    document.addEventListener('DOMContentLoaded', () => {
+        const logo = document.querySelector("img.navbar-brand");
+        const navbar = document.querySelector(".navbar");
+        logo.style.height = `${navbar.clientHeight}px`;
+        logo.style.display = "block";
 
-    let navTabs = [...document.querySelectorAll("li.nav-item")];
-    let maxWidth = Math.max(...navTabs.map(tab => tab.clientWidth));
-    // console.log(maxWidth);
+        const navTabs = [...document.querySelectorAll("li.nav-item")];
+        const maxWidth = Math.max(...navTabs.map(tab => tab.clientWidth));
 
-    let customWidthStyle = document.createElement('style');
-    customWidthStyle.type = 'text/css';
+        const customWidthStyle = document.createElement('style');
+        customWidthStyle.type = 'text/css';
 
-    let css = `
-    @media (min-width: 992px) {
-        li.nav-item {
-            width: ${maxWidth+1}px;
+        const css = `
+        @media (min-width: 992px) {
+            li.nav-item {
+                width: ${maxWidth+1}px;
+            }
         }
-    }
-    `;
+        `;
 
-    customWidthStyle.innerHTML = css;
-    document.head.appendChild(customWidthStyle);
+        customWidthStyle.innerHTML = css;
+        document.head.appendChild(customWidthStyle);
+    });
 </script>
