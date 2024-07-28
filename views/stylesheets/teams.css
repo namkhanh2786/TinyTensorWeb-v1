@@ -227,6 +227,10 @@
     margin-bottom: -50pt;
 }
 
+#lnnp-img {
+    transform: scale(1.35);
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
