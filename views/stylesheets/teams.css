@@ -218,6 +218,10 @@
     left: 20pt;
 }
 
+#dgk-img {
+    transform: scale(1.1);
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
