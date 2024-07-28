@@ -31,12 +31,6 @@
     padding-top: 30%;
 }
 
-@media (min-width: 992px) {
-    .nav-item {
-        margin-right: 1rem;
-    }
-}
-
 .navbar-brand, .navbar-brand:hover, .navbar-brand:focus, .nav-link, .nav-link:hover, .nav-link:focus {
     color: #007BFF;
 }
@@ -81,4 +75,26 @@ nav.navbar {
 .nav-item:not(.active):hover {
     color: #007BFF;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border 0.15s ease-in-out;
+}
+
+@media (max-width: 446px) {
+    .nav-link {
+        width: 100svw;
+        margin-top: -20svw;
+        height: 50svh;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-link {
+        width: 100svw;
+        margin-top: -25svw;
+        height: 80svh;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-item {
+        margin-right: 1rem;
+    }
 }

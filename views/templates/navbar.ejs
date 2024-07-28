@@ -8,7 +8,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav sticky-bottom">
+        <ul class="navbar-nav">
             <% for (let [name, link] of [
                 ["Home", '/'],
                 ["About Us", '/aboutUs'],
@@ -33,7 +33,7 @@
 
     let navTabs = [...document.querySelectorAll("li.nav-item")];
     let maxWidth = Math.max(...navTabs.map(tab => tab.clientWidth));
-    console.log(maxWidth);
+    // console.log(maxWidth);
 
     let customWidthStyle = document.createElement('style');
     customWidthStyle.type = 'text/css';
