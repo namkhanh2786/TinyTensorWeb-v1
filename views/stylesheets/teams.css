@@ -236,6 +236,11 @@
     margin-bottom: -55pt;
 }
 
+#vvt-img {
+    transform: scale(0.8);
+    margin-bottom: -40pt;
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';

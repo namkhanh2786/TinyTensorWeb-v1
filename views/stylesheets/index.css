@@ -285,6 +285,10 @@
     font-size: 40pt;
 }
 
+.tinyMLApplication {
+    font-size: 2.1svw;
+}
+
 .tinyMLApplication-sectionTextLeftImgRight, .tinyMLApplication-sectionTextRightImgLeft  {
     display: flex;
     font-family: 'Times New Roman', Times, serif;
@@ -616,7 +620,7 @@ ol.gradient-list {
     }
 
     .form-secret-img {
-        height: 320pt;
+        height: 300pt;
     }
 
     .glassy-card {
@@ -665,7 +669,7 @@ ol.gradient-list {
     }
 
     .form-secret-img {
-        height: 800pt;
+        height: 770pt;
     }
 
     .glassy-card {
@@ -690,7 +694,7 @@ ol.gradient-list {
     }
 
     .form-secret-img {
-        height: 470pt;
+        height: 440pt;
     }
 
     .glassy-card {
@@ -715,7 +719,7 @@ ol.gradient-list {
     }
 
     .form-secret-img {
-        height: 420pt;
+        height: 390pt;
     }
 
     .glassy-card {
@@ -744,7 +748,7 @@ ol.gradient-list {
     }
 
     .form-secret-img {
-        height: 420pt;
+        height: 390pt;
     }
 
     .glassy-card {
@@ -772,7 +776,7 @@ ol.gradient-list {
     }
 
     .form-secret-img {
-        height: 470pt;
+        height: 440pt;
     }
 
     .glassy-card {
@@ -796,7 +800,7 @@ ol.gradient-list {
     }
 
     .form-secret-img {
-        height: 520pt;
+        height: 490pt;
     }
 
     .glassy-card {
