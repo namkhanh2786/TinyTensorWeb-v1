@@ -254,6 +254,11 @@
     margin-bottom: -20pt;
 }
 
+#btk-img {
+    transform: scale(1.1);
+    margin-bottom: -10pt;
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
