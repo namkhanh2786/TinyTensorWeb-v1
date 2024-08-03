@@ -259,6 +259,15 @@
     margin-bottom: -10pt;
 }
 
+#kn-img {
+    margin-bottom: -17pt;
+}
+
+#tgh-img {
+    transform: scale(0.9);
+    margin-bottom: -40pt;
+}
+
 .teams-introduction {
     margin-top: 50pt;
     font-family: 'Play';
